@@ -1,0 +1,48 @@
+﻿@page
+@model BigDataGenerator.Pages.FormatterModel
+@{
+    ViewData["Title"] = "Formatter page";
+}
+
+<div class="jumbotron rounded-lg" style="min-height: 65vh">
+    <div class="container bg-light">
+        <h3 class="text-uppercase text-center">Format Users List</h3>
+        <form class="mt-1" asp-action="Index" method="post" id="FetchForm">
+
+            <div class="row row-cols-2 justify-content-center">
+                <textarea id="InputDataTextArea" asp-for="InputData" rows="10" class="text-primary">
+                </textarea>
+            </div>
+
+            <div class="row row-cols-2 justify-content-center">
+                <!--We use column here, to set the buttons in horizontal way.-->
+                <div class="col mt-3 mb-3 text-center">
+                    <button id="FormatInputDataButton" type="button" class="btn btn-primary btn-lg bg-black text-white border border-2 border-primary">
+                        Format
+                    </button>
+                    <button id="ClearInputDataButton" type="button" class="btn btn-primary btn-lg bg-black text-white border border-2 border-primary">
+                        Clear
+                    </button>
+                </div>
+            </div>
+            <!--We will have a label to indicate if the formatting was success or failed.-->
+        </form>
+
+        <h3 class="text-uppercase">Result</h3>
+
+        <!--Here we have to write our table and parse data in the js side to throw it in the table.-->
+        <table id="ResultTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>

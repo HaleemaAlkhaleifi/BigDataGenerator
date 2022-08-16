@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="jumbotron rounded-lg" style="min-height: 65vh">
+    <div class="container bg-light">
+        <h3 class="text-uppercase text-center">Generate Users List</h3>
+        <form class="mt-1" asp-action="Index" method="post" id="FetchForm">
+
+            <div class="row row-cols-2 justify-content-center">
+                <textarea id="FetchedDataTextArea" asp-for="FetchedData" rows="10" class="text-primary">
+                </textarea>
+            </div>
+
+            <div class="row row-cols-2 justify-content-center">
+                <!--We use column here, to set the buttons in horizontal way.-->
+                <div class="col mt-3 mb-3 text-center">
+                    <button id="FetchButton" type="submit" class="btn btn-primary btn-lg bg-black text-white border border-2 border-primary">
+                        Fetch Data
+                    </button>
+                    <button id="CopyButton" type="button" class="btn btn-primary btn-lg bg-black text-white border border-2 border-primary">
+                        Copy
+                    </button>
+                    <button id="ClearFetchedDataButton" type="button" class="btn btn-primary btn-lg bg-black text-white border border-2 border-primary">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
